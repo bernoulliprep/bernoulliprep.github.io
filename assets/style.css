@@ -47,6 +47,9 @@ margin:0 calc(50% - 50vw);padding:6px max(20px,calc(50vw - 410px)) 16px;scroll-p
 .shots::-webkit-scrollbar{display:none}
 .shots[hidden]{display:none}
 .shots img{height:clamp(300px,42vw,380px);width:auto;flex:none;border-radius:18px;border:1px solid var(--line);scroll-snap-align:start}
+/* Breit: die fünf iPhone-Bilder füllen genau die Textbreite, iPad und Mac gleich hoch */
+@media (min-width:900px){.shots img{height:calc((min(100vw,860px) - 104px) * .4345)}
+.shots[data-d="iphone"] img{height:auto;width:calc((100% - 64px) / 5)}}
 .app-row{display:flex;gap:18px;align-items:center}
 .app-row img{width:72px;height:72px;border-radius:16px}
 .app-row h3{margin:0}.app-row p{margin:2px 0 0;color:var(--muted)}
