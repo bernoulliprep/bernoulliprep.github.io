@@ -43,7 +43,11 @@ h2{font-size:26px;letter-spacing:-.01em;margin:36px 0 12px}
 @media (hover:none){.arrows{display:none}}
 main{overflow-x:clip}
 .shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
-margin:0 calc(50% - 50vw);padding:6px max(20px,calc(50vw - 410px)) 16px;scroll-padding-inline:max(20px,calc(50vw - 410px))}
+padding:6px 0 16px}
+/* Weitere Bilder: weicher Rand statt harter Kante */
+.shots.fr{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 56px),transparent)}
+.shots.fl{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px);mask-image:linear-gradient(90deg,transparent,#000 56px)}
+.shots.fl.fr{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent)}
 .shots::-webkit-scrollbar{display:none}
 .shots[hidden]{display:none}
 .shots img{height:clamp(300px,42vw,380px);width:auto;flex:none;border-radius:18px;border:1px solid var(--line);scroll-snap-align:start}
